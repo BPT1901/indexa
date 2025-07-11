@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  sysref:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - /mnt/nas/sysref:/data
+    environment:
+      - DATABASE_PATH=/data/sysref.db
+    restart: unless-stopped
+    container_name: sysref
+    networks:
+      - sysref-network
+
+networks:
+  sysref-network:
+    driver: bridge

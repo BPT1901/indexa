@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Entry - SysRef</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/">🔧 SysRef</a></h1>
+            <p>Edit Entry</p>
+        </header>
+
+        <div class="form-container">
+            <form id="entryForm">
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input type="text" id="title" name="title" value="{{ entry.title }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Network Config" {% if entry.category == 'Network Config' %}selected{% endif %}>Network Config</option>
+                        <option value="Server Setup" {% if entry.category == 'Server Setup' %}selected{% endif %}>Server Setup</option>
+                        <option value="Git Workflows" {% if entry.category == 'Git Workflows' %}selected{% endif %}>Git Workflows</option>
+                        <option value="Linux Commands" {% if entry.category == 'Linux Commands' %}selected{% endif %}>Linux Commands</option>
+                        <option value="Docker" {% if entry.category == 'Docker' %}selected{% endif %}>Docker</option>
+                        <option value="Troubleshooting" {% if entry.category == 'Troubleshooting' %}selected{% endif %}>Troubleshooting</option>
+                        <option value="Scripts" {% if entry.category == 'Scripts' %}selected{% endif %}>Scripts</option>
+                        <option value="Other" {% if entry.category == 'Other' %}selected{% endif %}>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags (comma-separated)</label>
+                    <input type="text" id="tags" name="tags" value="{{ entry.tags }}" placeholder="e.g., docker, nginx, ssl">
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content *</label>
+                    <textarea id="content" name="content" required>{{ entry.content }}</textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Update Entry</button>
+                    <a href="/view/{{ entry.id }}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('entryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const entry = {
+                title: formData.get('title'),
+                category: formData.get('category'),
+                tags: formData.get('tags'),
+                content: formData.get('content')
+            };
+            
+            try {
+                const response = await fetch('/entries/{{ entry.id }}', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(entry)
+                });
+                
+                if (response.ok) {
+                    window.location.href = '/view/{{ entry.id }}';
+                } else {
+                    alert('Error updating entry');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error updating entry');
+            }
+        });
+    </script>
+</body>
+</html>

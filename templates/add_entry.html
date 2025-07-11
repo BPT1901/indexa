@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Entry - SysRef</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/">🔧 SysRef</a></h1>
+            <p>Add New Entry</p>
+        </header>
+
+        <div class="form-container">
+            <form id="entryForm">
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Network Config">Network Config</option>
+                        <option value="Server Setup">Server Setup</option>
+                        <option value="Git Workflows">Git Workflows</option>
+                        <option value="Linux Commands">Linux Commands</option>
+                        <option value="Docker">Docker</option>
+                        <option value="Troubleshooting">Troubleshooting</option>
+                        <option value="Scripts">Scripts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags (comma-separated)</label>
+                    <input type="text" id="tags" name="tags" placeholder="e.g., docker, nginx, ssl">
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content *</label>
+                    <textarea id="content" name="content" required placeholder="Enter your commands, procedures, or configuration details..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Entry</button>
+                    <a href="/" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('entryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const entry = {
+                title: formData.get('title'),
+                category: formData.get('category'),
+                tags: formData.get('tags'),
+                content: formData.get('content')
+            };
+            
+            try {
+                const response = await fetch('/entries', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(entry)
+                });
+                
+                if (response.ok) {
+                    window.location.href = '/';
+                } else {
+                    alert('Error saving entry');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error saving entry');
+            }
+        });
+    </script>
+</body>
+</html>

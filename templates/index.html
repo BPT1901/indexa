@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysRef - Personal IT Knowledge Base</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 SysRef</h1>
+        </header>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search commands, procedures, configs..." autocomplete="off">
+                <button id="searchBtn">🔍</button>
+            </div>
+            <div class="search-filters">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                </select>
+                <button id="clearSearch">Clear</button>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="/add" class="btn btn-primary">➕ Add New Entry</a>
+            <a href="/export" class="btn btn-secondary">📥 Export Data</a>
+        </div>
+
+        <div id="searchResults" class="results-container"></div>
+        
+        <div id="recentEntries" class="entries-container">
+            <h2>Recent Entries</h2>
+            <div id="entriesList"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
