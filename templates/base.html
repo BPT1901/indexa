@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}SysRef {% endblock %}</title>
+    <title>{% block title %}Indexa {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><a href="/" style="text-decoration: none; color: inherit;">🔧 SysRef</a></h1>
+            <h1><a href="/" style="text-decoration: none; color: inherit;"><i class="fas fa-database"></i> Indexa</a></h1>
             {% if self.subtitle() %}<p>{% block subtitle %}{% endblock %}</p>{% endif %}
         </header>
 
@@ -19,7 +20,7 @@
         </main>
 
         <footer style="text-align: center; margin-top: 50px; padding: 20px; color: #6c757d; font-size: 0.9em;">
-            <p>&copy; 2024 SysRef - Personal IT Knowledge Base</p>
+            <p>&copy; 2025 Indexa - OnCueCreative - Personal IT Knowledge Base</p>
         </footer>
     </div>
 

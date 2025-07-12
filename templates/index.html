@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SysRef - Personal IT Knowledge Base</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>🔧 SysRef</h1>
-        </header>
+{% extends "base.html" %}
+
+{% block title %}Indexa - Personal IT Knowledge Base{% endblock %}
+
+{% block content %}
 
         <div class="search-container">
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Search commands, procedures, configs..." autocomplete="off">
-                <button id="searchBtn">🔍</button>
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
             </div>
             <div class="search-filters">
                 <select id="categoryFilter">
@@ -26,8 +18,8 @@
         </div>
 
         <div class="actions">
-            <a href="/add" class="btn btn-primary">➕ Add New Entry</a>
-            <a href="/export" class="btn btn-secondary">📥 Export Data</a>
+            <a href="/add" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Entry</a>
+            <a href="/export" class="btn btn-secondary"><i class="fas fa-download"></i> Export Data</a>
         </div>
 
         <div id="searchResults" class="results-container"></div>
@@ -36,8 +28,9 @@
             <h2>Recent Entries</h2>
             <div id="entriesList"></div>
         </div>
-    </div>
 
+{% endblock %}
+
+{% block scripts %}
     <script src="/static/script.js"></script>
-</body>
-</html>
+{% endblock %}

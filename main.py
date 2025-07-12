@@ -15,10 +15,10 @@ import markdown
 load_dotenv()
 
 # Configuration
-DATABASE_PATH = os.getenv("DATABASE_PATH", "/data/sysref.db")
+DATABASE_PATH = os.getenv("DATABASE_PATH", "/data/indexa.db")
 STATIC_DIR = "static"
 TEMPLATES_DIR = "templates"
-APP_NAME = os.getenv("APP_NAME", "SysRef - Personal IT Knowledge Base")
+APP_NAME = os.getenv("APP_NAME", "Indexa - Personal IT Knowledge Base")
 APP_VERSION = os.getenv("APP_VERSION", "1.0.0")
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
@@ -278,7 +278,7 @@ async def export_entries():
         
         return JSONResponse(
             content={"entries": entries, "exported_at": datetime.now().isoformat()},
-            headers={"Content-Disposition": "attachment; filename=sysref_export.json"}
+            headers={"Content-Disposition": "attachment; filename=indexa_export.json"}
         )
 
 # Web interface routes

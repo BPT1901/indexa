@@ -1,19 +1,19 @@
 version: '3.8'
 
 services:
-  sysref:
+  indexa:
     build: .
     ports:
       - "8000:8000"
     volumes:
-      - /mnt/nas/sysref:/data
+      - /mnt/nas/indexa:/data
     environment:
-      - DATABASE_PATH=/data/sysref.db
+      - DATABASE_PATH=/data/indexa.db
     restart: unless-stopped
-    container_name: sysref
+    container_name: indexa
     networks:
-      - sysref-network
+      - indexa-network
 
 networks:
-  sysref-network:
+  indexa-network:
     driver: bridge

@@ -204,10 +204,10 @@ function createEntryCard(entry, isSearchResult = false) {
         ${tagsHTML ? `<div class="entry-tags">${tagsHTML}</div>` : ''}
         ${snippetHTML || contentPreview}
         <div class="entry-actions">
-            <a href="/view/${entry.id}" class="btn-small btn-view">View</a>
-            <a href="/edit/${entry.id}" class="btn-small btn-edit">Edit</a>
-            <button onclick="deleteEntry(${entry.id})" class="btn-small btn-delete">Delete</button>
-            <button onclick="copyToClipboard('${entry.id}')" class="btn-small btn-secondary">Copy</button>
+            <a href="/view/${entry.id}" class="btn-small btn-view"><i class="fas fa-eye"></i> View</a>
+            <a href="/edit/${entry.id}" class="btn-small btn-edit"><i class="fas fa-edit"></i> Edit</a>
+            <button onclick="deleteEntry(${entry.id})" class="btn-small btn-delete"><i class="fas fa-trash"></i> Delete</button>
+            <button onclick="copyToClipboard('${entry.id}')" class="btn-small btn-secondary"><i class="fas fa-copy"></i> Copy</button>
         </div>
     `;
     

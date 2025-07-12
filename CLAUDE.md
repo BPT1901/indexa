@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SysRef is a personal IT knowledge base application built with FastAPI and SQLite. It provides a web interface for storing, searching, and managing technical documentation and reference materials.
+Indexa is a personal IT knowledge base application built with FastAPI and SQLite. It provides a web interface for storing, searching, and managing technical documentation and reference materials.
 
 ## Architecture
 
@@ -43,10 +43,10 @@ python main.py
 docker-compose up --build
 
 # Build Docker image
-docker build -t sysref .
+docker build -t indexa .
 
 # Run container
-docker run -p 8000:8000 -v /path/to/data:/data sysref
+docker run -p 8000:8000 -v /path/to/data:/data indexa
 ```
 
 ### Testing
@@ -67,7 +67,7 @@ The application uses SQLite with FTS5 for full-text search:
 - **entries_fts**: FTS5 virtual table for full-text search
 - **triggers**: Automatic sync between main table and FTS index
 
-Database location is configurable via `DATABASE_PATH` environment variable (default: `/data/sysref.db`).
+Database location is configurable via `DATABASE_PATH` environment variable (default: `/data/indexa.db`).
 
 ## API Endpoints
 

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ entry.title }} - SysRef</title>
+    <title>{{ entry.title }} - Indexa</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><a href="/">🔧 SysRef</a></h1>
+            <h1><a href="/"><i class="fas fa-database"></i> Indexa</a></h1>
             <p>{{ entry.title }}</p>
         </header>
 
@@ -35,10 +35,10 @@
             </div>
 
             <div class="form-actions">
-                <button onclick="copyToClipboard()" class="btn btn-primary">📋 Copy Content</button>
-                <a href="/edit/{{ entry.id }}" class="btn btn-secondary">✏️ Edit</a>
-                <button onclick="deleteEntry()" class="btn btn-delete">🗑️ Delete</button>
-                <a href="/" class="btn btn-secondary">← Back to Home</a>
+                <button onclick="copyToClipboard()" class="btn btn-primary"><i class="fas fa-copy"></i> Copy Content</button>
+                <a href="/edit/{{ entry.id }}" class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</a>
+                <button onclick="deleteEntry()" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                <a href="/" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
             </div>
         </div>
     </div>

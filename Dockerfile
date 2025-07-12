@@ -19,7 +19,7 @@ COPY . .
 RUN mkdir -p templates static
 
 # Set environment variables
-ENV DATABASE_PATH=/data/sysref.db
+ENV DATABASE_PATH=/data/indexa.db
 ENV PYTHONPATH=/app
 
 # Expose port

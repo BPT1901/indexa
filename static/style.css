@@ -1,15 +1,15 @@
 /* Custom Color Theme Variables */
 :root {
-    --primary-red: #AF0005;
-    --dark-purple: #581458;
-    --bright-pink: #BE236C;
-    --dark-navy: #071223;
-    --light-blue-white: #F9FDFF;
-    --text-dark: #071223;
-    --text-light: #F9FDFF;
-    --accent-hover: #8B0004;
-    --secondary-hover: #461146;
-    --pink-hover: #A01F5C;
+    --primary-red: #D32F2F;
+    --dark-purple: #7E57C2;
+    --bright-pink: #EC407A;
+    --dark-navy: #37474F;
+    --light-blue-white: #FAFAFA;
+    --text-dark: #263238;
+    --text-light: #FFFFFF;
+    --accent-hover: #B71C1C;
+    --secondary-hover: #673AB7;
+    --pink-hover: #E91E63;
 }
 
 /* Reset and base styles */
@@ -22,8 +22,8 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: var(--text-light);
-    background: linear-gradient(135deg, var(--dark-navy) 0%, var(--dark-purple) 100%);
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #381942 0%, #8654b8 50%, #591061 100%);
     min-height: 100vh;
 }
 
@@ -42,36 +42,38 @@ header {
 
 header h1 {
     font-size: 3em;
-    color: var(--light-blue-white);
+    color: white;
     margin-bottom: 10px;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 header h1 a {
-    color: inherit;
+    color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 header h1 a:hover {
-    color: var(--bright-pink);
+    color: rgba(255,255,255,0.8);
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
 }
 
 header p {
     font-size: 1.2em;
-    color: var(--light-blue-white);
+    color: white;
     opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 /* Search container */
 .search-container {
-    background: rgba(249, 253, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     margin-bottom: 30px;
-    border: 2px solid var(--bright-pink);
+    border: 2px solid var(--dark-purple);
     backdrop-filter: blur(10px);
 }
 
@@ -105,7 +107,7 @@ header p {
 
 #searchBtn {
     padding: 18px 24px;
-    background: transparent;
+    background: var(--dark-purple);
     color: var(--light-blue-white);
     border: none;
     border-radius: 12px;
@@ -113,7 +115,7 @@ header p {
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: none;
+    box-shadow: 0 2px 8px rgba(126, 87, 194, 0.3);
 }
 
 #searchBtn:hover {
@@ -148,7 +150,7 @@ header p {
     padding: 12px 18px;
     background: var(--dark-purple);
     color: var(--light-blue-white);
-    border: 1px solid rgba(255,255,255,0.8);
+    border: 1px solid var(--dark-purple);
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
@@ -216,19 +218,19 @@ header p {
 
 /* Results and entries */
 .results-container, .entries-container {
-    background: rgba(249, 253, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     padding: 30px;
     margin-bottom: 30px;
-    border: 2px solid var(--bright-pink);
+    border: 2px solid var(--dark-purple);
     backdrop-filter: blur(10px);
 }
 
 .results-container h2, .entries-container h2 {
     margin-bottom: 25px;
     color: var(--dark-navy);
-    border-bottom: 3px solid var(--bright-pink);
+    border-bottom: 3px solid var(--dark-purple);
     padding-bottom: 15px;
     font-size: 1.8em;
     font-weight: 700;
@@ -244,9 +246,9 @@ header p {
 }
 
 .entry-card:hover {
-    box-shadow: 0 8px 32px rgba(175, 0, 5, 0.2);
+    box-shadow: 0 6px 25px rgba(126, 87, 194, 0.3);
     transform: translateY(-3px);
-    border-color: var(--bright-pink);
+    border-color: var(--dark-purple);
 }
 
 .entry-title {
@@ -356,13 +358,13 @@ header p {
 
 /* Forms */
 .form-container {
-    background: rgba(249, 253, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     max-width: 800px;
     margin: 0 auto;
-    border: 2px solid var(--bright-pink);
+    border: 2px solid var(--dark-purple);
     backdrop-filter: blur(10px);
 }
 
@@ -434,7 +436,7 @@ textarea {
 .markdown-content h1 { 
     font-size: 2.2em; 
     color: var(--primary-red);
-    border-bottom: 3px solid var(--bright-pink);
+    border-bottom: 3px solid var(--dark-purple);
     padding-bottom: 10px;
 }
 
@@ -445,7 +447,7 @@ textarea {
 
 .markdown-content h3 { 
     font-size: 1.4em; 
-    color: var(--bright-pink);
+    color: var(--dark-purple);
 }
 
 .markdown-content pre {
@@ -476,12 +478,12 @@ textarea {
 }
 
 .markdown-content blockquote {
-    border-left: 4px solid var(--bright-pink);
+    border-left: 4px solid var(--dark-purple);
     padding-left: 20px;
     margin: 20px 0;
     color: var(--dark-purple);
     font-style: italic;
-    background: rgba(190, 35, 108, 0.05);
+    background: rgba(126, 87, 194, 0.05);
     padding: 15px 20px;
     border-radius: 0 8px 8px 0;
 }
@@ -509,7 +511,7 @@ textarea {
 }
 
 .markdown-content tr:nth-child(even) {
-    background: rgba(190, 35, 108, 0.05);
+    background: rgba(126, 87, 194, 0.05);
 }
 
 .markdown-content ul,
@@ -530,7 +532,7 @@ textarea {
 }
 
 .markdown-content a:hover {
-    color: var(--bright-pink);
+    color: var(--dark-purple);
     text-decoration: underline;
 }
 
@@ -618,7 +620,7 @@ textarea {
 }
 
 .notification.info { 
-    background: linear-gradient(135deg, var(--bright-pink) 0%, var(--dark-purple) 100%);
+    background: linear-gradient(135deg, var(--dark-purple) 0%, var(--primary-red) 100%);
 }
 
 @keyframes slideIn {
@@ -638,8 +640,8 @@ textarea {
     font-size: 0.9em;
     opacity: 0;
     transition: opacity 0.3s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    border: 2px solid var(--bright-pink);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    border: 2px solid var(--dark-purple);
 }
 
 .shortcuts.show {
@@ -657,15 +659,15 @@ textarea {
 
 /* Footer */
 footer {
-    background: rgba(0,0,0,0.3);
-    color: var(--light-blue-white);
+    background: rgba(55, 71, 79, 0.1);
+    color: #cd91e3;
     text-align: center;
     margin-top: 50px;
     padding: 25px;
     border-radius: 10px;
-    opacity: 0.9;
+    opacity: 0.8;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(55, 71, 79, 0.2);
 }
 
 /* Scrollbar styling */
@@ -678,7 +680,7 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--bright-pink);
+    background: var(--dark-purple);
     border-radius: 4px;
 }
 
