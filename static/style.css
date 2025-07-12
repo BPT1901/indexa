@@ -372,6 +372,41 @@ header p {
     margin-bottom: 25px;
 }
 
+.category-input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.category-input-group select {
+    flex: 1;
+    min-width: 200px;
+}
+
+.category-input-group input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+}
+
+.category-separator {
+    font-weight: 600;
+    color: var(--dark-purple);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .category-input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .category-separator {
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+
 label {
     display: block;
     margin-bottom: 8px;
