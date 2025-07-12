@@ -84,13 +84,3 @@ coverage.xml
 profile_default/
 ipython_config.py
 
-# Claude
-.Claude/
-CLAUDE.md
-
-# Deployment files (keep local only)
-DEPLOYMENT.md
-deploy.sh
-
-# Screenshots
-Screenshot*.png
