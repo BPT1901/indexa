@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  indexa:
+    image: bpt1901/indexa:latest
+    container_name: indexa-prod
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount your NAS path here - adjust as needed for your LXC setup
+      - /mnt/indexa:/data
+    environment:
+      - DATABASE_PATH=/data/indexa.db
+      - APP_NAME=Indexa - Personal IT Knowledge Base
+      - DEBUG=false
+    restart: unless-stopped
+    networks:
+      - indexa-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  indexa-network:
+    driver: bridge
+
+# Optional: Add logging configuration
+# logging:
+#   driver: "json-file"
+#   options:
+#     max-size: "10m"
+#     max-file: "3"

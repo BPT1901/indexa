@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  indexa:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - /mnt/nas/indexa:/data
+    environment:
+      - DATABASE_PATH=/data/indexa.db
+    restart: unless-stopped
+    container_name: indexa
+    networks:
+      - indexa-network
+
+networks:
+  indexa-network:
+    driver: bridge
