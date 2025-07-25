@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indexa</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗄️</text></svg>"
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1><a href="/"><i class="fas fa-database"></i> Indexa</a></h1>
-            <p>Edit Entry</p>
-        </header>
+{% extends "base.html" %}
+
+{% block title %}Edit Entry - Indexa{% endblock %}
+
+{% block subtitle %}Edit Entry{% endblock %}
+
+{% block content %}
 
         <div class="form-container">
             <form id="entryForm">
@@ -50,8 +41,10 @@
                 </div>
             </form>
         </div>
-    </div>
 
+{% endblock %}
+
+{% block scripts %}
     <script>
         const currentCategory = "{{ entry.category }}";
 
@@ -141,5 +134,4 @@
             }
         });
     </script>
-</body>
-</html>
+{% endblock %}
