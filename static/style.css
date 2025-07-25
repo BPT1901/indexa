@@ -40,7 +40,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 50%, var(--bg-secondary) 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #404040 50%, #d3d3d3 100%);
     min-height: 100vh;
 }
 
@@ -137,7 +137,6 @@ header p {
 
 #searchBtn:hover {
     background: var(--secondary-hover);
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(106, 143, 181, 0.4);
 }
 
@@ -177,7 +176,6 @@ header p {
 
 #clearSearch:hover {
     background: var(--secondary-hover);
-    transform: translateY(-1px);
 }
 
 /* Actions */
@@ -209,7 +207,6 @@ header p {
 
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--accent-hover) 0%, var(--pink-hover) 100%);
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(144, 176, 144, 0.4);
 }
 
@@ -220,7 +217,6 @@ header p {
 
 .btn-secondary:hover {
     background: var(--secondary-hover);
-    transform: translateY(-2px);
 }
 
 .btn-delete {
@@ -230,7 +226,6 @@ header p {
 
 .btn-delete:hover {
     background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
-    transform: translateY(-2px);
 }
 
 /* Results and entries */
@@ -264,7 +259,6 @@ header p {
 
 .entry-card:hover {
     box-shadow: 0 6px 25px rgba(138, 159, 181, 0.4);
-    transform: translateY(-3px);
     border-color: var(--accent-green);
 }
 
@@ -360,7 +354,6 @@ header p {
 
 .btn-edit:hover {
     background: var(--secondary-hover);
-    transform: translateY(-1px);
 }
 
 .btn-view {
@@ -370,7 +363,6 @@ header p {
 
 .btn-view:hover {
     background: var(--pink-hover);
-    transform: translateY(-1px);
 }
 
 /* Forms */
